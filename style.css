@@ -1,0 +1,238 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  overflow: hidden;
+}
+.container {
+  font-size: 6px;
+  width: 40em;
+  height: 40em;
+  position: relative;
+}
+img {
+  width: 130%;
+  height: 130%;
+  object-fit: cover;
+}
+.sun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15em;
+  left: 15em;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  box-shadow: 0 0 13em rgb(255, 128, 0);
+  animation: orbit 50s linear infinite;
+}
+.mercury,
+.venus,
+.earth,
+.moon,
+.mars,
+.jupiter,
+.saturn,
+.uran,
+.neptun,
+.pluta {
+  position: absolute;
+  border-style: solid;
+  border-color: white transparent transparent;
+  border-width: 0.1em 0.1em 0 0;
+  border-radius: 50%;
+}
+.mercury {
+  left: 12.5em;
+  top: 12.5em;
+  width: 15em;
+  height: 15em;
+  animation: orbit 47.7s linear infinite;
+}
+.venus {
+  left: 10em;
+  top: 10em;
+  width: 20em;
+  height: 20em;
+  animation: orbit 50s linear infinite;
+}
+.earth {
+  left: 6em;
+  top: 6em;
+  width: 28em;
+  height: 28em;
+  animation: orbit 36s linear infinite;
+}
+.moon {
+  right: -1em;
+  top: 2.5em;
+  width: 7em;
+  height: 7em;
+  animation: orbit 2.7s linear infinite;
+}
+.mars {
+  left: 2.5em;
+  top: 2em;
+  width: 36em;
+  height: 36em;
+  animation: orbit 26.5s linear infinite;
+}
+.jupiter {
+  left: -2em;
+  top: -2em;
+  width: 45em;
+  height: 45em;
+  animation: orbit 21s linear infinite;
+}
+.saturn {
+  left: -7em;
+  top: -7em;
+  width: 55em;
+  height: 55em;
+  animation: orbit 17s linear infinite;
+}
+.uran {
+  left: -12em;
+  top: -12em;
+  width: 65em;
+  height: 65em;
+  animation: orbit 19s linear infinite;
+}
+.neptun {
+  left: -17em;
+  top: -17em;
+  width: 75em;
+  height: 75em;
+  animation: orbit 15s linear infinite;
+}
+.pluta {
+  left: -22em;
+  top: -22em;
+  width: 85em;
+  height: 85em;
+  animation: orbit 18s linear infinite;
+}
+
+.mercury::before,
+.venus::before,
+.earth::before,
+.moon::before,
+.mars::before,
+.jupiter::before,
+.saturn::before,
+.uran::before,
+.neptun::before,
+.pluta::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: orbit 50s linear infinite;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+}
+.mercury::before {
+  top: 1.5em;
+  right: 0.8em;
+  width: 2em;
+  height: 2em;
+  background-image: url("/images/mercury.png");
+  background-size: cover;
+}
+.venus::before {
+  top: 2em;
+  right: 2em;
+  width: 2em;
+  height: 2em;
+  background-image: url("/images/venus.png");
+  background-size: cover;
+}
+
+.earth::before {
+  top: 3em;
+  right: 0em;
+  width: 5em;
+  height: 5em;
+  background-image: url("/images/earth.png");
+  background-size: cover;
+}
+.moon::before {
+  top: 0.8em;
+  right: 0.2em;
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url("/images/moon.png");
+  background-size: cover;
+}
+
+.mars::before {
+  top: 3em;
+  right: 3em;
+  width: 3em;
+  height: 3em;
+  background-image: url("/images/mars.png");
+  background-size: cover;
+}
+
+.jupiter::before {
+  top: 6em;
+  right: 3em;
+  width: 5em;
+  height: 5em;
+  background-image: url("/images/jupiter.png");
+  background-size: cover;
+}
+
+.saturn::before {
+  top: 7.5em;
+  right: 5em;
+  width: 4.5em;
+  height: 4.5em;
+  background-image: url("/images/saturn.png");
+  background-size: cover;
+}
+
+.uran::before {
+  top: 9em;
+  right: 6.8em;
+  width: 4em;
+  height: 4em;
+  background-image: url("/images/uranus.png");
+  background-size: cover;
+}
+.neptun::before {
+  top: 10em;
+  right: 8em;
+  width: 2em;
+  height: 2em;
+  background-image: url("/images/neptune.png");
+  background-size: cover;
+}
+
+.pluta::before {
+  top: 11em;
+  right: 10em;
+  width: 4em;
+  height: 4em;
+  background-image: url("/images/pluto.png");
+  background-size: cover;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
